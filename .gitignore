@@ -24,3 +24,5 @@ nbdist/
 
 ### system ignore ###
 .DS_Store
+
+*.exe
