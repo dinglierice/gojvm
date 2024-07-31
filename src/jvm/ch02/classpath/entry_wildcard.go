@@ -18,7 +18,7 @@ func newWildcardEntry(path string) CompositeEntry {
 			return filepath.SkipDir
 		}
 		if strings.HasSuffix(path, ".jar") || strings.HasSuffix(path, ".zip") {
-			jarEntry := newEntryZip(path)
+			jarEntry := newZipEntry(path)
 			compositeEntry = append(compositeEntry, jarEntry)
 		}
 		return nil
