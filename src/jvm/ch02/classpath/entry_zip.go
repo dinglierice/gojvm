@@ -20,7 +20,7 @@ func newZipEntry(path string) *ZipEntry {
 }
 
 func (e *ZipEntry) readClass(className string) ([]byte, Entry, error) {
-	reader, err := zip.OpenReader(className)
+	reader, err := zip.OpenReader(e.absDir)
 	if err != nil {
 		return nil, nil, err
 	}
