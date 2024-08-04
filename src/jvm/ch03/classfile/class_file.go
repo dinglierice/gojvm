@@ -5,9 +5,6 @@ import (
 	"fmt"
 )
 
-type AttributeInfo struct {
-}
-
 type ClassFile struct {
 	//magic uint32
 	minorVersion uint16
