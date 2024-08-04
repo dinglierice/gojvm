@@ -40,7 +40,7 @@ func (e *ClassReader) readUint16s() []uint16 {
 	return s
 }
 
-func (e *ClassReader) readBytes(length int32) []byte {
+func (e *ClassReader) readBytes(length uint32) []byte {
 	bytes := e.data[:length]
 	e.data = e.data[length:]
 	return bytes

@@ -5,10 +5,6 @@ import (
 	"fmt"
 )
 
-func (p ConstantPool) getClassName(class uint16) string {
-	return ""
-}
-
 type AttributeInfo struct {
 }
 
@@ -122,7 +118,7 @@ func (e *ClassFile) InterfaceNames() []string {
 func (e *ClassFile) read(reader *ClassReader) {
 	e.readAndCheckMagic(reader)
 	e.readAndCheckVersion(reader)
-	e.constantPool = readConstantPool()
+	e.constantPool = readConstantPool(reader)
 	e.accessFlags = reader.readUint16()
 	e.thisClass = reader.readUint16()
 	e.superClass = reader.readUint16()
