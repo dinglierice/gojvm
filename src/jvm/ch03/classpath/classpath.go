@@ -33,6 +33,10 @@ func (e *Classpath) String() string {
 	return e.userClasspath.String()
 }
 
+// 搜索
+// 仅仅是为了检验文件是否存在，没输入或者不存在则输入系统环境变量
+// bootClasspath Entry 引导类路径：核心库和基础库
+// extClasspath  Entry 扩展类路径：基础库扩展
 func (e *Classpath) parseBootAndExtClasspath(jreOption string) {
 	jreDir := getJreDir(jreOption)
 

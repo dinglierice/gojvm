@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// 创建一个通配符入口
 func newWildcardEntry(path string) CompositeEntry {
 	baseDir := path[:len(path)-1]
 	var compositeEntry []Entry
