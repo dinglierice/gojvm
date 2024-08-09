@@ -38,5 +38,7 @@ func startJVM(cmd *Cmd) {
 		fmt.Printf("Read class %s error:%v", className, err)
 		return
 	}
+
+	// 正确加载了启动类
 	fmt.Printf("class data : %v\n", class)
 }

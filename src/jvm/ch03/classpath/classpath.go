@@ -20,6 +20,9 @@ func Parse(jreOption, cpOption string) *Classpath {
 
 func (e *Classpath) ReadClass(className string) ([]byte, Entry, error) {
 	className = className + ".class"
+	// 每一种类路径entry对应着不同的接口实现，所以readClass能够找到对应的实现
+	// 变量初始化必须是接口的具体实现
+	// 接口的零值是 nil，直接调用 nil 接口的方法会导致运行时 panic。
 	if data, entry, err := e.bootClasspath.readClass(className); err == nil {
 		return data, entry, err
 	}
